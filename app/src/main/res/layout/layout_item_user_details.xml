@@ -1,5 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imgView_userProfile_itemLayout"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_margin="@dimen/large_margin"
+        tools:src="@drawable/account_icon" />
+
+    <TextView
+        android:id="@+id/txtView_userName_itemLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/imgView_userProfile_itemLayout"
+        android:layout_marginLeft="@dimen/small_margin"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:layout_toEndOf="@id/imgView_userProfile_itemLayout"
+        android:layout_toRightOf="@id/imgView_userProfile_itemLayout"
+        android:fontFamily="sans-serif-light"
+        android:text="Ahmad Nosratian"
+        android:textColor="@color/color_black" />
+
+    <TextView
+        android:id="@+id/txtView_userBio_itemLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtView_userName_itemLayout"
+        android:layout_alignLeft="@id/txtView_userName_itemLayout"
+
+        android:maxLines="2"
+        android:layout_marginTop="@dimen/large_margin"
+        android:text="@string/str_fake_bio" />
+
+    <TextView
+        android:id="@+id/txtView_status_itemLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/txtView_userName_itemLayout"
+        android:layout_alignBottom="@id/txtView_userName_itemLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/large_margin"
+        android:text="@string/str_status_online"
+
+        android:textColor="@color/color_green" />
 
 </RelativeLayout>
