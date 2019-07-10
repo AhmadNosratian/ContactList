@@ -6,4 +6,7 @@
 
     <color name="color_black">#000</color>
     <color name="color_green">#1B5E20</color>
+
+    <color name="contact_name">#333333</color>
+    <color name="contact_number">#8c8c8c</color>
 </resources>

@@ -1,9 +1,7 @@
 package ir.ahmadnosratian.contact.di.component;
 
-import android.content.Context;
-
 import dagger.Component;
-import ir.ahmadnosratian.contact.MainActivity;
+import ir.ahmadnosratian.contact.view.MainActivity;
 import ir.ahmadnosratian.contact.di.module.ApiClientModule;
 import ir.ahmadnosratian.contact.di.module.ContextModule;
 

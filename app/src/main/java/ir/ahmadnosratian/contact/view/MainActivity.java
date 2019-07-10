@@ -1,4 +1,4 @@
-package ir.ahmadnosratian.contact;
+package ir.ahmadnosratian.contact.view;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import javax.inject.Inject;
+
+import ir.ahmadnosratian.contact.App;
+import ir.ahmadnosratian.contact.R;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -2,50 +2,40 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:paddingLeft="@dimen/large_margin"
+    android:paddingTop="@dimen/large_margin"
+    android:paddingRight="@dimen/large_margin"
+    android:paddingBottom="@dimen/large_margin">
 
     <ImageView
-        android:id="@+id/imgView_userProfile_itemLayout"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_margin="@dimen/large_margin"
+        android:id="@+id/thumbnail"
+        android:layout_width="@dimen/thumbnail"
+        android:layout_height="@dimen/thumbnail"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/medium_margin"
         tools:src="@drawable/account_icon" />
 
     <TextView
-        android:id="@+id/txtView_userName_itemLayout"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/imgView_userProfile_itemLayout"
-        android:layout_marginLeft="@dimen/small_margin"
-        android:layout_marginTop="@dimen/medium_margin"
-        android:layout_toEndOf="@id/imgView_userProfile_itemLayout"
-        android:layout_toRightOf="@id/imgView_userProfile_itemLayout"
-        android:fontFamily="sans-serif-light"
-        android:text="Ahmad Nosratian"
-        android:textColor="@color/color_black" />
+        android:layout_toRightOf="@id/thumbnail"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/contact_name"
+        android:textSize="15dp"
+        tools:text="Ahmad Nosratian" />
 
     <TextView
-        android:id="@+id/txtView_userBio_itemLayout"
+        android:id="@+id/phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtView_userName_itemLayout"
-        android:layout_alignLeft="@id/txtView_userName_itemLayout"
-
-        android:maxLines="2"
-        android:layout_marginTop="@dimen/large_margin"
-        android:text="@string/str_fake_bio" />
-
-    <TextView
-        android:id="@+id/txtView_status_itemLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@id/txtView_userName_itemLayout"
-        android:layout_alignBottom="@id/txtView_userName_itemLayout"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="@dimen/large_margin"
-        android:text="@string/str_status_online"
-
-        android:textColor="@color/color_green" />
+        android:layout_below="@id/name"
+        android:layout_toRightOf="@id/thumbnail"
+        android:textColor="@color/contact_number"
+        android:textSize="12dp"
+        tools:text="+98 123 4556" />
 
 </RelativeLayout>
