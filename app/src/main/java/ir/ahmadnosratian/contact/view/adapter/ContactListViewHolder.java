@@ -11,7 +11,7 @@ import com.squareup.picasso.Picasso;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ir.ahmadnosratian.contact.R;
-import ir.ahmadnosratian.contact.repository.model.Contact;
+import ir.ahmadnosratian.contact.data.model.Contact;
 
 public class ContactListViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.thumbnail)

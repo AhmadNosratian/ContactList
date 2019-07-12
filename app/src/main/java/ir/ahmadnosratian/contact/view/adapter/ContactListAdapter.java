@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ir.ahmadnosratian.contact.R;
-import ir.ahmadnosratian.contact.repository.model.Contact;
+import ir.ahmadnosratian.contact.data.model.Contact;
 
 public class ContactListAdapter extends RecyclerView.Adapter<ContactListViewHolder> {
     ContactSelectedListener contactSelectedListener;

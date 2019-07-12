@@ -1,8 +1,8 @@
-package ir.ahmadnosratian.contact.repository;
+package ir.ahmadnosratian.contact.data.remote;
 
 import java.util.List;
 import io.reactivex.Single;
-import ir.ahmadnosratian.contact.repository.model.Contact;
+import ir.ahmadnosratian.contact.data.model.Contact;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 

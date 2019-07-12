@@ -4,7 +4,7 @@ import android.app.Application;
 
 import ir.ahmadnosratian.contact.di.component.ApplicationComponent;
 import ir.ahmadnosratian.contact.di.component.DaggerApplicationComponent;
-import ir.ahmadnosratian.contact.di.module.ContextModule;
+
 
 public class App extends Application {
 
@@ -15,8 +15,9 @@ public class App extends Application {
         super.onCreate();
 
         applicationComponent = DaggerApplicationComponent.builder()
-                .contextModule(new ContextModule(this))
+                .application(this)
                 .build();
+
     }
 
     public static ApplicationComponent getApplicationComponent() {

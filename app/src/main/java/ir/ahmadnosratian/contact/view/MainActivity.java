@@ -7,7 +7,6 @@ import android.widget.Toast;
 
 import javax.inject.Inject;
 
-import ir.ahmadnosratian.contact.App;
 import ir.ahmadnosratian.contact.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        App.getApplicationComponent().injectMainActivity(this);
+//        App.getApplicationComponent().injectMainActivity(this);
 
 
 
