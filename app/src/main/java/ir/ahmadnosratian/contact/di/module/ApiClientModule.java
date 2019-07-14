@@ -11,7 +11,7 @@ import ir.ahmadnosratian.contact.data.remote.ApiService;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static ir.ahmadnosratian.contact.utilities.Const.BASE_URL;
+import static ir.ahmadnosratian.contact.utils.Const.BASE_URL;
 
 @Module
 public class ApiClientModule {

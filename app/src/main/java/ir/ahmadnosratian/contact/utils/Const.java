@@ -1,4 +1,4 @@
-package ir.ahmadnosratian.contact.utilities;
+package ir.ahmadnosratian.contact.utils;
 
 public class Const {
     public static final String BASE_URL = "https://api.androidhive.info/json/";

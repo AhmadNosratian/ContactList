@@ -13,4 +13,7 @@ public interface DbHelper {
 
     Observable<Boolean> insertAllContacts(List<Contact> contacts);
 
+
+
+
 }

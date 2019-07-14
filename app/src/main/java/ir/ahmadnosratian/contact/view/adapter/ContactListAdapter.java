@@ -14,13 +14,15 @@ import ir.ahmadnosratian.contact.data.model.Contact;
 
 public class ContactListAdapter extends RecyclerView.Adapter<ContactListViewHolder> {
     ContactSelectedListener contactSelectedListener;
-    List<Contact> contactList = new ArrayList<>();
+    List<Contact> contactList;
 
-    public ContactListAdapter(List<Contact> contacts, ContactSelectedListener contactSelectedListener) {
-        this.contactSelectedListener = contactSelectedListener;
+    public ContactListAdapter(List<Contact> contacts) {
         this.contactList = contacts;
     }
 
+    public void setListener(ContactSelectedListener listener) {
+        this.contactSelectedListener = listener;
+    }
 
     @NonNull
     @Override

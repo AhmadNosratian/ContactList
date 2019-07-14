@@ -12,7 +12,7 @@ import ir.ahmadnosratian.contact.data.DataManager;
 import ir.ahmadnosratian.contact.data.local.db.AppDatabase;
 import ir.ahmadnosratian.contact.data.remote.ApiService;
 import ir.ahmadnosratian.contact.di.DatabaseInfo;
-import ir.ahmadnosratian.contact.utilities.Const;
+import ir.ahmadnosratian.contact.utils.Const;
 
 @Module
 public class AppModule {
