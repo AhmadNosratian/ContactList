@@ -37,7 +37,7 @@ public class AppModule {
     }
 
     @Provides
-    @Singleton
+    @DatabaseInfo
     String provideDatabaseName() {
         return Const.DB_NAME;
     }

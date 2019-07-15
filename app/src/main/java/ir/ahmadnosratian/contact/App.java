@@ -1,26 +1,34 @@
 package ir.ahmadnosratian.contact;
 
+import android.app.Activity;
 import android.app.Application;
 
-import ir.ahmadnosratian.contact.di.component.ApplicationComponent;
+import javax.inject.Inject;
+import dagger.android.DispatchingAndroidInjector;
+import dagger.android.HasActivityInjector;
 import ir.ahmadnosratian.contact.di.component.DaggerApplicationComponent;
 
 
-public class App extends Application {
+public class App extends Application implements HasActivityInjector {
 
-    static ApplicationComponent applicationComponent;
+
+    @Inject
+    DispatchingAndroidInjector<Activity> activityDispatchingAndroidInjector;
+
+    @Override
+    public DispatchingAndroidInjector<Activity> activityInjector() {
+        return activityDispatchingAndroidInjector;
+    }
+
 
     @Override
     public void onCreate() {
         super.onCreate();
 
-        applicationComponent = DaggerApplicationComponent.builder()
+        DaggerApplicationComponent.builder()
                 .application(this)
-                .build();
-
+                .build()
+                .inject(this);
     }
 
-    public static ApplicationComponent getApplicationComponent() {
-        return applicationComponent;
-    }
 }

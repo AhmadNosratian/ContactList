@@ -3,12 +3,12 @@ package ir.ahmadnosratian.contact.di.builder;
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 import ir.ahmadnosratian.contact.view.ContactActivity;
-import ir.ahmadnosratian.contact.view.ContactModule;
+import ir.ahmadnosratian.contact.view.ContactActivityProvider;
 
 @Module
 public abstract class ActivityBuilder {
 
-    @ContributesAndroidInjector(modules = {ContactModule.class})
+    @ContributesAndroidInjector(modules = {ContactActivityProvider.class})
     abstract ContactActivity bindContactActivity();
 
 }
