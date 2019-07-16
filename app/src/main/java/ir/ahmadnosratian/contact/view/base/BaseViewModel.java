@@ -2,6 +2,7 @@ package ir.ahmadnosratian.contact.view.base;
 
 
 import android.arch.lifecycle.ViewModel;
+import android.databinding.ObservableBoolean;
 
 import java.lang.ref.WeakReference;
 
@@ -12,6 +13,8 @@ import ir.ahmadnosratian.contact.utils.rx.SchedulerProvider;
 public abstract class BaseViewModel<N> extends ViewModel {
 
     private DataManager mDataManager;
+
+    ObservableBoolean mIsLoading = new ObservableBoolean();
 
     private CompositeDisposable mCompositeDisposable;
 
@@ -32,16 +35,24 @@ public abstract class BaseViewModel<N> extends ViewModel {
         super.onCleared();
     }
 
-    public CompositeDisposable getmCompositeDisposable() {
+    public CompositeDisposable getCompositeDisposable() {
         return mCompositeDisposable;
     }
 
-    public DataManager getmDataManager() {
+    public DataManager getDataManager() {
         return mDataManager;
     }
 
-    public SchedulerProvider getmSchedulerProvider() {
+    public SchedulerProvider getSchedulerProvider() {
         return mSchedulerProvider;
+    }
+
+    public ObservableBoolean getmIsLoading() {
+        return mIsLoading;
+    }
+
+    public void setIsLoading(boolean isLoading) {
+        mIsLoading.set(isLoading);
     }
 
     public void setNavigator(N navigator) {

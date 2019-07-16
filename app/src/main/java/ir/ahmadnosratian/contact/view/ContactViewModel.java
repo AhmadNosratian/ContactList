@@ -1,7 +1,6 @@
 package ir.ahmadnosratian.contact.view;
 
 import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MediatorLiveData;
 import android.arch.lifecycle.MutableLiveData;
 
 import java.util.List;
@@ -28,15 +27,15 @@ public class ContactViewModel extends BaseViewModel<ContactNavigator> {
 
     private void fetchContacts() {
         loading.setValue(true);
-        getmCompositeDisposable().add(
-                getmDataManager().getContacts("gmail", "")
-                        .subscribeOn(getmSchedulerProvider().io())
-                        .observeOn(getmSchedulerProvider().ui())
+        getCompositeDisposable().add(
+                getDataManager().getContacts("gmail", "")
+                        .subscribeOn(getSchedulerProvider().io())
+                        .observeOn(getSchedulerProvider().ui())
                         .subscribe(contactResponse -> {
-                            loading.setValue(false);
                             if (contactResponse != null) {
                                 contactListLiveData.setValue(contactResponse);
                             }
+                            loading.setValue(false);
                         }, throwable -> {
                             loading.setValue(false);
                             getNavigator().handleError(throwable);

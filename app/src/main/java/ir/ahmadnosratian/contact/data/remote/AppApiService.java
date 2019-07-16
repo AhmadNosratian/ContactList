@@ -9,11 +9,11 @@ import ir.ahmadnosratian.contact.data.model.Contact;
 @Singleton
 public class AppApiService implements ApiService {
 
-    private ApiService apiService;
+    @Inject
+    public ApiService apiService;
 
     @Inject
-    public AppApiService(ApiService apiService) {
-        this.apiService = apiService;
+    public AppApiService() {
     }
 
     @Override
