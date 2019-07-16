@@ -6,8 +6,12 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.Toast;
+
 import java.util.List;
+
 import javax.inject.Inject;
+
 import butterknife.BindView;
 import dagger.android.AndroidInjection;
 import ir.ahmadnosratian.contact.R;
@@ -58,16 +62,16 @@ public class ContactActivity extends BaseActivity implements ContactNavigator, C
 
     @Override
     public void handleError(Throwable throwable) {
-        Log.e(TAG, "handleError: " + throwable.toString() );
+        Log.e(TAG, "handleError: " + throwable.toString());
     }
 
     @Override
     public void updateContact(List<Contact> contactList) {
-        Log.i(TAG, "updateContact: " + contactList.toString());
+        adapter.addContacts(contactList);
     }
 
     @Override
     public void onContactSelected(Contact contact) {
-
+        Toast.makeText(this,"I'm " +  contact.getName(), Toast.LENGTH_SHORT).show();
     }
 }

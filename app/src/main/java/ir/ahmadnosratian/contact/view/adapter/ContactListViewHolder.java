@@ -27,7 +27,7 @@ public class ContactListViewHolder extends RecyclerView.ViewHolder {
 
     public ContactListViewHolder(@NonNull View itemView, ContactSelectedListener contactSelectedListener) {
         super(itemView);
-        ButterKnife.bind(itemView);
+        ButterKnife.bind(this , itemView);
         itemView.setOnClickListener(v -> {
             if (contact != null) {
                 contactSelectedListener.onContactSelected(contact);

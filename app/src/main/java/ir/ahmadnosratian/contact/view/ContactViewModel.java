@@ -15,18 +15,16 @@ public class ContactViewModel extends BaseViewModel<ContactNavigator> {
 
     private MutableLiveData<List<Contact>> contactListLiveData;
 
-    private MutableLiveData<Boolean> loading;
 
     public ContactViewModel(DataManager dataManager, SchedulerProvider schedulerProvider) {
         super(dataManager, schedulerProvider);
         contactListLiveData = new MutableLiveData<>();
-        loading = new MutableLiveData<>();
 
         fetchContacts();
     }
 
     private void fetchContacts() {
-        loading.setValue(true);
+        setIsLoading(true);
         getCompositeDisposable().add(
                 getDataManager().getContacts("gmail", "")
                         .subscribeOn(getSchedulerProvider().io())
@@ -35,9 +33,10 @@ public class ContactViewModel extends BaseViewModel<ContactNavigator> {
                             if (contactResponse != null) {
                                 contactListLiveData.setValue(contactResponse);
                             }
-                            loading.setValue(false);
+                            getNavigator().updateContact(contactResponse);
+                            setIsLoading(false);
                         }, throwable -> {
-                            loading.setValue(false);
+                            setIsLoading(false);
                             getNavigator().handleError(throwable);
                         })
         );
@@ -48,8 +47,5 @@ public class ContactViewModel extends BaseViewModel<ContactNavigator> {
         return contactListLiveData;
     }
 
-    public LiveData<Boolean> getLoading() {
-        return loading;
-    }
 
 }

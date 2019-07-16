@@ -20,6 +20,15 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactListViewHold
         this.contactList = contacts;
     }
 
+    public void addContacts(List<Contact> contacts) {
+        this.contactList = contacts;
+        notifyDataSetChanged();
+    }
+
+    public void clearContacts(){
+        contactList.clear();
+    }
+
     public void setListener(ContactSelectedListener listener) {
         this.contactSelectedListener = listener;
     }
