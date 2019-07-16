@@ -6,7 +6,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,7 +28,7 @@ public class ContactListViewHolder extends RecyclerView.ViewHolder {
 
     public ContactListViewHolder(@NonNull View itemView, ContactSelectedListener contactSelectedListener) {
         super(itemView);
-        ButterKnife.bind(this , itemView);
+        ButterKnife.bind(this, itemView);
         itemView.setOnClickListener(v -> {
             if (contact != null) {
                 contactSelectedListener.onContactSelected(contact);
@@ -37,7 +38,9 @@ public class ContactListViewHolder extends RecyclerView.ViewHolder {
 
     void bind(Contact contact) {
         this.contact = contact;
-        Picasso.get().load(contact.getProfileImage()).into(avatarImage);
+        Glide.with(itemView.getContext())
+                .applyDefaultRequestOptions(RequestOptions.circleCropTransform())
+                .load(contact.getProfileImage()).into(avatarImage);
         nameTextView.setText(contact.getName());
         phoneTextView.setText(contact.getPhone());
     }
